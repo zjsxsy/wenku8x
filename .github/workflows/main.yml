@@ -52,9 +52,7 @@ jobs:
       - uses: finnp/create-file-action@master
         env:
           FILE_NAME: lib/common/config/ignoreConfig.dart
-          FILE_DATA: class NetConfig { static const CLIENT_ID = "${{ secrets.CLIENT_ID }}"; static const CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}";}
-      - run: flutter pub get
-      - run: flutter build apk --release --target-platform=android-arm64 --no-shrink
+          FILE_DATA: class NetConfig { static const CLIENT_ID = "${{ secrets.CLIENT_ID }}"; static const CLIENT_SECRET = "${{ secrets.CLIENT_SECRET }}";
       - name: Upload APK
         uses: actions/upload-artifact@v2
         with:
